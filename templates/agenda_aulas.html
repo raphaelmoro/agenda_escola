@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda de Aulas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Agenda de Aulas</h1>
+        <p>Agende as aulas da escola de idiomas.</p>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <form method="POST">
+                <label for="aluno">Aluno:</label><br>
+                <input type="text" id="aluno" name="aluno" required><br><br>
+
+                <label for="professor">Professor:</label><br>
+                <input type="text" id="professor" name="professor" required><br><br>
+
+                <label for="idioma">Idioma:</label><br>
+                <select id="idioma" name="idioma" required>
+                    <option value="">Selecione</option>
+                    <option value="Inglês">Inglês</option>
+                    <option value="Espanhol">Espanhol</option>
+                    <option value="Francês">Francês</option>
+                    <option value="Italiano">Italiano</option>
+                </select><br><br>
+
+                <label for="data">Data da aula:</label><br>
+                <input type="date" id="data" name="data" required><br><br>
+
+                <label for="horario">Horário:</label><br>
+                <input type="time" id="horario" name="horario" required><br><br>
+
+                <label for="modalidade">Modalidade:</label><br>
+                <select id="modalidade" name="modalidade" required>
+                    <option value="">Selecione</option>
+                    <option value="Online">Online</option>
+                    <option value="Presencial">Presencial</option>
+                </select><br><br>
+
+                <button type="submit" class="btn">Agendar Aula</button>
+                <a href="/" class="btn">Voltar</a>
+            </form>
+        </section>
+
+        {% if mensagem %}
+        <section class="card">
+            <h2>{{ mensagem }}</h2>
+            <p><strong>Aluno:</strong> {{ dados_aula.aluno }}</p>
+            <p><strong>Professor:</strong> {{ dados_aula.professor }}</p>
+            <p><strong>Idioma:</strong> {{ dados_aula.idioma }}</p>
+            <p><strong>Data:</strong> {{ dados_aula.data }}</p>
+            <p><strong>Horário:</strong> {{ dados_aula.horario }}</p>
+            <p><strong>Modalidade:</strong> {{ dados_aula.modalidade }}</p>
+        </section>
+        {% endif %}
+    </main>
+</body>
+</html>

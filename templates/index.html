@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda Escola de Idiomas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Agenda da Escola de Idiomas</h1>
+        <p>Organize aulas, professores e alunos em um só lugar.</p>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <h2>Bem-vindo</h2>
+            <p>Esse é o sistema inicial da agenda escolar.</p>
+            <a href="/cadastro_aluno" class="btn">Cadastrar Aluno</a>
+            <a href="/agenda_aulas" class="btn">Agenda de Aulas</a>
+        </section>
+
+        <section class="card">
+            <h2>Próximos passos</h2>
+            <ul>
+                <li>Cadastro de alunos</li>
+                <li>Cadastro de professores</li>
+                <li>Agendamento de aulas</li>
+                <li>Consulta de horários</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>Projeto integrador UNIVESP desenvolvido com Flask e HTML. </p>
+    </footer>
+</body>
+</html>
