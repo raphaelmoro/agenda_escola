@@ -3,12 +3,24 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 
 @app.route("/")
+
 def home():
     return render_template("index.html")
+
+@app.route("/cadastro_professor")
+def cadastro_professor():
+    return render_template("cadastro_professor.html")
+
+@app.route("/consulta_agenda")
+def consulta_agenda():
+    return render_template("consulta_agenda.html")
 
 @app.route("/cadastro_aluno", methods=["GET", "POST"])
 def cadastro_aluno():
     mensagem = ""
+
+    
+
 
     if request.method == "POST":
         nome = request.form.get("nome")
@@ -60,4 +72,3 @@ def agenda_aulas():
 
 if __name__ == "__main__":
     app.run(debug=True)
-    

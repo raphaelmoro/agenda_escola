@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta da Agenda</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<header>
+    <h1>Consulta da Agenda</h1>
+    <p>Visualize e acompanhe as aulas agendadas.</p>
+</header>
+
+<main class="container">
+
+    <section class="card">
+        <h2>Filtros de Consulta</h2>
+
+        <form method="GET">
+            <label for="aluno">Aluno:</label><br>
+            <input type="text" id="aluno" name="aluno" placeholder="Digite o nome do aluno"><br><br>
+
+            <label for="professor">Professor:</label><br>
+            <input type="text" id="professor" name="professor" placeholder="Digite o nome do professor"><br><br>
+
+            <label for="idioma">Idioma:</label><br>
+            <select id="idioma" name="idioma">
+                <option value="">Todos</option>
+                <option value="Inglês">Inglês</option>
+                <option value="Espanhol">Espanhol</option>
+                <option value="Francês">Francês</option>
+                <option value="Italiano">Italiano</option>
+            </select><br><br>
+
+            <label for="data">Data:</label><br>
+            <input type="date" id="data" name="data"><br><br>
+
+            <button type="submit" class="btn">Pesquisar</button>
+            <a href="/consulta_agenda" class="btn">Limpar</a>
+            <a href="/" class="btn">Voltar</a>
+        </form>
+    </section>
+
+    <section class="card">
+        <h2>Aulas Agendadas</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Aluno</th>
+                    <th>Professor</th>
+                    <th>Idioma</th>
+                    <th>Data</th>
+                    <th>Horário</th>
+                    <th>Modalidade</th>
+                    <th>Status</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>João Silva</td>
+                    <td>Maria Souza</td>
+                    <td>Inglês</td>
+                    <td>20/05/2026</td>
+                    <td>19:00</td>
+                    <td>Online</td>
+                    <td>Agendada</td>
+                        <td class="acoes">
+    <button class="btn">Editar</button>
+    <button class="btn">Excluir</button>
+</td>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Ana Oliveira</td>
+                    <td>Carlos Lima</td>
+                    <td>Espanhol</td>
+                    <td>22/05/2026</td>
+                    <td>18:30</td>
+                    <td>Presencial</td>
+                    <td>Agendada</td>
+                    <td>
+                        <button class="btn">Editar</button>
+                        <button class="btn">Excluir</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Pedro Santos</td>
+                    <td>Fernanda Alves</td>
+                    <td>Francês</td>
+                    <td>25/05/2026</td>
+                    <td>20:00</td>
+                    <td>Online</td>
+                    <td>Concluída</td>
+                    <td>
+                        <button class="btn">Editar</button>
+                        <button class="btn">Excluir</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+</main>
+
+<footer>
+    <p>Projeto Integrador UNIVESP desenvolvido com Flask, HTML e Python.</p>
+</footer>
+
+</body>
+</html>
